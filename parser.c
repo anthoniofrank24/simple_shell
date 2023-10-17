@@ -11,7 +11,7 @@ void tokenize_input(char *input, char **args)
 	char *token;
 	int index = 0;
 
-	token = strtok(input, " \t");
+	token = _strtok(input, " \t");
 	while (token != NULL && index < 255)
 	{
 		args[index] = token;

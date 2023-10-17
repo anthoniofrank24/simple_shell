@@ -16,7 +16,7 @@ int main(void)
 	char *token = NULL, *prompt = "cisfun$ ", *args[256] = {NULL};
 
 	write(1, prompt, strlen(prompt));
-	read = getline(&buf, &n, stdin);
+	read = _getline(&buf, &n, stdin);
 
 	if (read == -1)
 	{

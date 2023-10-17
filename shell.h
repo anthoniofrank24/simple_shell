@@ -10,6 +10,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+#define BUFFER_SIZE 12
+
 extern char **environ;
 
 int we_putchar(char character);
