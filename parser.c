@@ -6,11 +6,10 @@
  * Return: nothing
  */
 
-void tokenize_input(char *input, char **args)
+char *tokenize_input(char *buf, char *args[])
 {
-	char *args[256] = {NULL};
 	int index = 0;
-	char *token;
+	char *token = NULL;
 
 	token = _strtok(buf, " \t");
 	while (token != NULL && index < 255)
@@ -20,5 +19,6 @@ void tokenize_input(char *input, char **args)
 		index++;
 	}
 	args[index] = NULL;
-}
 
+	return (args[0]);
+}

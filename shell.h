@@ -20,8 +20,10 @@ int we_putstring(char *string);
 int  myprinter(const char *format, ...);
 int we_int(int digitseen);
 int main(void);
-void tokenize_input(char *input, char **args);
-void execute_command(char *command, char **args);
+char *tokenize_input(char *buf, char *args[]);
+void execute_command(char *command, char *args[]);
 void print_environment(void);
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
+char *_strtok(char *str, const char *delim);
 
 #endif /* SHELL_h */

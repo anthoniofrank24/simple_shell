@@ -14,4 +14,3 @@ void print_environment(void)
 		env++;
 	}
 }
-

@@ -12,6 +12,7 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 	size_t buf = BUFFER_SIZE;
 	size_t length = 0;
 	int c;
+	char *temp;
 
 
 	if (*lineptr == NULL)
@@ -39,7 +40,7 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 		if (length == *n - 1)
 		{
 			*n *= 2;
-			char *temp = (char *)realloc(*lineptr, *n);
+			temp = (char *)realloc(*lineptr, *n);
 		if (temp == NULL)
 		{
 			free(*lineptr);
@@ -56,5 +57,5 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 	}
 
 	(*lineptr)[length] = '\0';
-	return ((ssize_t)length);
+	return (length);
 }
