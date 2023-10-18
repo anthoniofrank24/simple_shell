@@ -17,24 +17,18 @@ int main(void)
 
 	write(1, prompt, strlen(prompt));
 	read = getline(&buf, &n, stdin);
-
 	if (read == -1)
 	{
 		perror("getline");
 		free(buf);
 		exit(1);
 	}
-
 	if (buf[read - 1] == '\n')
 	{
 		buf[read - 1] = '\0';
 	}
-
-	if (strcmp(buf, "exit") == 0)
-	{
-		free(buf);
-		exit(0);
-	}
+	
+	handle_exit(buf);
 
 	if (token != NULL && strcmp(token, "env") == 0)
 	{
