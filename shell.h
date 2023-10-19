@@ -18,7 +18,7 @@ int we_putstring(char *string);
 int  myprinter(const char *format, ...);
 int we_int(int digitseen);
 int main(void);
-void tokenize_input(char *input, char **args);
+void tokenize_input(char *input, char **args, char *delimiter);
 void execute_command(char *command, char **args);
 void print_environment(void);
 void handle_exit(char *buf);
