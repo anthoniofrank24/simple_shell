@@ -26,7 +26,7 @@ int main(void)
 	{
 		buf[read - 1] = '\0';
 	}
-	
+
 	handle_exit(buf);
 
 	if (token != NULL && strcmp(token, "env") == 0)
