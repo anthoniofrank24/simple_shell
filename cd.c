@@ -9,13 +9,15 @@
 void cd(const char *path)
 {
 	char current_directory[PATH_MAX];
-	char *prev_directory = strdup(current_directory);
+	char *prev_directory;
 
 	if (getcwd(current_directory, sizeof(current_directory)) == NULL)
 	{
 		perror("getcwd");
 		return;
 	}
+
+	prev_directory = strdup(current_directory);
 
 	if (path == NULL || strcmp(path, "") == 0)
 	{
