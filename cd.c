@@ -10,6 +10,7 @@ void cd(const char *path)
 {
 	char current_directory[PATH_MAX];
 	char *prev_directory;
+	char *new_directory;
 
 	if (getcwd(current_directory, sizeof(current_directory)) == NULL)
 	{
@@ -31,7 +32,12 @@ void cd(const char *path)
 	if (chdir(path) == 0)
 	{
 		setenv("OLDPWD", prev_directory, 1);
-		setenv("PWD", getcwd(NULL, 0), 1);
+		new_directory = getcwd(NULL, 0);
+		if (new_directory != NULL)
+		{
+		setenv("PWD", new_directory, 1);
+		free(new_directory);
+		}
 	}
 
 	free(prev_directory);
