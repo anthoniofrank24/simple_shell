@@ -13,15 +13,14 @@ int main(void)
 
 	while (1)
 	{
-	char *token = NULL, *prompt = "cisfun$ ", *args[256] = {NULL};
+	char *token = NULL, *prompt = "", *args[256] = {NULL};
 
 	write(1, prompt, strlen(prompt));
 	read = getline(&buf, &n, stdin);
 	if (read == -1)
 	{
-		perror("getline");
 		free(buf);
-		exit(1);
+		exit(0);
 	}
 	if (buf[read - 1] == '\n')
 	{
