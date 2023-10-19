@@ -26,7 +26,6 @@ int main(void)
 	{
 		buf[read - 1] = '\0';
 	}
-
 	handle_exit(buf);
 
 	if (token != NULL && strcmp(token, "env") == 0)
@@ -36,7 +35,14 @@ int main(void)
 
 	tokenize_input(buf, args);
 
+	if (strcmp(args[0], "cd") == 0)
+	{
+		cd(args[1]);
+	}
+	else
+	{
 	execute_command(args[0], args);
+	}
 	}
 	free(buf);
 	return (0);
