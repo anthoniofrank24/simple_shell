@@ -3,6 +3,7 @@
  * tokenize_input - tokenizes the input
  * @input: the input to tokenize
  * @args: counter
+ * @delimiter: the delimiter to the input
  * Return: nothing
  */
 

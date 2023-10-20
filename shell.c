@@ -1,4 +1,5 @@
 #include "shell.h"
+int mani(void);
 /**
  * main - mimics the linux shell
  * @void: argument passed to the main
